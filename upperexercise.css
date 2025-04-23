@@ -1,0 +1,69 @@
+/* services */
+body {
+    background-color:black;
+    color:white;
+    font-size: 500%;
+    text-align: center;
+    background-image: url("https://i.pinimg.com/originals/a7/4f/12/a74f12f8c93811af2b48dec0a9e95df1.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200vh;
+    background-color: #f4f4f4;
+}
+  
+video {
+    border: 2px solid #333;
+    border-radius: 8px;
+}
+.services .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.services .box-container .box{
+    height: 25rem;
+    flex: 1 1 30rem;
+    border: 1rem solid var(--white);
+    box-shadow: var(--box-shadow);
+    border-radius: .5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.services .box-container .box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.services .box-container .box .content{
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, .9);
+    padding: 5rem;
+    padding-top: 5rem;
+    text-align: center;
+}
+
+.services .box-container .box:hover .content{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.services .box-container .box .content h3{
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.services .box-container .box .content p{
+    font-size: 1.5rem;
+    color: #666;
+    padding: 1rem 0;
+}
+
+
+/* end */
