@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Pricing Plans</title>
+    <link rel="stylesheet" href="pricing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="pricing.css">
+
+</head>
+<body>
+    <header>
+        <div class="logo">Fitness Hub</div>
+        <nav>
+            <ul>
+                <li><a href="fitnesshub.html" class="w3-bar-item w3-button">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="BMI2.html">BMI Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="pricing" id="pricing">
+        <h1 class="heading">Pricing Plan</h1>
+        <div class="box-container">
+            <!-- Plan 1 -->
+            <div class="box">
+                <h3>Basic Plan</h3>
+                <div class="price"><span>$ </span>30</div>
+                <h3 class="month">3 months</h3>
+                <div class="list">
+                    <p><i class="fas fa-check"></i> Cardio</p>
+                    <p><i class="fas fa-check"></i> Weight Lifting</p>
+                    <p><i class="fas fa-check"></i> Supplements</p>
+                    <p><i class="fas fa-times"></i> Personal Trainer</p>
+                </div>
+                <label for="subscribe-toggle1" class="btn">Choose the Plan</label>
+            </div>
+            <!-- Plan 2 -->
+            <div class="box">
+                <h3>Standard Plan</h3>
+                <div class="price"><span>$ </span>50</div>
+                <h3 class="month">6 months</h3>
+                <div class="list">
+                    <p><i class="fas fa-check"></i> Cardio</p>
+                    <p><i class="fas fa-check"></i> Weight Lifting</p>
+                    <p><i class="fas fa-check"></i> Supplements</p>
+                    <p><i class="fas fa-times"></i> Personal Trainer</p>
+                </div>
+                <label for="subscribe-toggle2" class="btn">Choose the Plan</label>
+            </div>
+            <!-- Plan 3 -->
+            <div class="box">
+                <h3>Premium Plan</h3>
+                <div class="price"><span>$ </span>120</div>
+                <h3 class="month">12 months</h3>
+                <div class="list">
+                    <p><i class="fas fa-check"></i> Cardio</p>
+                    <p><i class="fas fa-check"></i> Weight Lifting</p>
+                    <p><i class="fas fa-check"></i> Supplements</p>
+                    <p><i class="fas fa-check"></i> Personal Trainer</p>
+                </div>
+                <label for="subscribe-toggle3" class="btn">Choose the Plan</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hidden checkboxes to control overlays -->
+    <input type="checkbox" id="subscribe-toggle1">
+    <input type="checkbox" id="subscribe-toggle2">
+    <input type="checkbox" id="subscribe-toggle3">
+
+    <!-- Lightbox overlays for each plan -->
+    <div class="overlay overlay1">
+        <div class="subscription-box">
+            <label for="subscribe-toggle1" class="close-btn">X</label>
+            <h2>Subscribe to the Basic Plan</h2>
+            <form action="/submit-subscription" method="post">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay overlay2">
+        <div class="subscription-box">
+            <label for="subscribe-toggle2" class="close-btn">X</label>
+            <h2>Subscribe to the Standard Plan</h2>
+            <form action="/submit-subscription" method="post">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay overlay3">
+        <div class="subscription-box">
+            <label for="subscribe-toggle3" class="close-btn">X</label>
+            <h2>Subscribe to the Premium Plan</h2>
+            <form action="/submit-subscription" method="post">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+    
+
+                    </body>
+                    </html>
