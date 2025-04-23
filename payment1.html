@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Options</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000; /* Black background */
+      color: #fff; /* White text */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      border: 2px solid #fff;
+      padding: 30px;
+      border-radius: 10px;
+      background-color: #111; /* Slightly lighter black for contrast */
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #fff;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 10px;
+    }
+
+    .payment-options {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .payment-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 20px;
+      background-color: #222; /* Dark grey for card backgrounds */
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .payment-option:hover {
+      background-color: #333; /* Slightly lighter grey on hover */
+      transform: scale(1.02);
+    }
+
+    .payment-option img {
+      height: 40px;
+      width: auto;
+    }
+
+    .payment-option span {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .back-button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #555; /* Medium grey for the button */
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .back-button:hover {
+      background-color: #777; /* Lighter grey on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Choose Payment Option</h1>
+    <div class="payment-options">
+      <!-- Paytm -->
+      <div class="payment-option" onclick="alert('You selected Paytm!')">
+        <span>Paytm</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Paytm_logo.png" alt="Paytm">
+      </div>
+      <!-- Google Pay -->
+      <div class="payment-option" onclick="alert('You selected Google Pay!')">
+        <span>Google Pay</span>
+        <img src="https://th.bing.com/th/id/OIP.8JJxcU3RnhtHDvAANRq2QwHaEC?w=335&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Google Pay">
+      </div>
+      <!-- Credit Card -->
+      <div class="payment-option" onclick="alert('You selected Credit Card!')">
+        <span>Credit Card</span>
+        <img src="https://th.bing.com/th/id/OIP.eKkowLdstwwFG65NJ07uhgHaEL?w=286&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Credit Card">
+      </div>
+    </div>
+    <a href="supplements.html">
+    <button class="back-button" onclick="window.history.back()">Back</button>
+  </a></div>
+</body>
+</html>
