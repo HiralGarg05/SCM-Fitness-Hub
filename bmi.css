@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e8ebf1;
+    background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20230722/pngtree-3d-rendering-of-calculator-symbol-against-a-black-background-image_3782739.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
+}
+.img {
+    width: 7000px;
+    height: 100px;
+}
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(7, 7, 7);
+    width: 300px;
+    color:#f3f4f7
+}
+
+h1 {
+    margin-bottom: 20px;
+    color:#f8f5f5
+}
+
+.bmi-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="number"] {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #f8f5f5;
+    border-radius: 4px;
+    color:#030303
+}
+
+button {
+    padding: 10px;
+    font-size: 1rem;
+    color: rgb(249, 247, 247);
+    background-color: #4caf50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+        /* Back button styles */
+        .back-btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #28a745; /* Green color */
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #218838;
+        }
