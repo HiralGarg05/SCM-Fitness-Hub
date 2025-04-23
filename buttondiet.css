@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic Styling */
+body {
+    font-family: Arial, sans-serif;
+    color: #494747;
+    text-align: center;
+    background-color: #0a0a0a;
+    background-image: url('https://th.bing.com/th?id=OIP.WdYqYyRxmjy4zU8nmnZ2HQHaF7&w=279&h=223&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #f9fdf9;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* Button Styling */
+.diet-options {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.button {
+    text-decoration: none;
+    color: white;
+    background-color: #4CAF50;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;  /* Border for smooth transition */
+}
+
+/* Button Hover Effect */
+.button:hover {
+    background-color: #45a049;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.8);  /* Lightbox effect */
+    transform: scale(1.1);  /* Slight enlargement */
+    border-color: #4CAF50;  /* Highlight border on hover */
+}
+
+/* Lightbox Effect (Glowing Outline) */
+.button:focus, .button:hover {
+    outline: none;
+    box-shadow: 0 0 10px 5px rgba(76, 175, 80, 0.8); /* Glowing effect */
+}
+.back-button {
+            text-decoration: none;
+            color: white;
+            background-color: #28a745;  /* Green color */
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+
+        .back-button:hover {
+            background-color: #218838;
+            box-shadow: 0 0 10px rgba(76, 175, 80, 0.8);
+            transform: scale(1.1);
+        }
