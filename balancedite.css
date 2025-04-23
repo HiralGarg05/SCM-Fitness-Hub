@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic Styling */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #080808;
+   
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #4CAF50;
+}
+
+header p {
+    font-size: 1.1em;
+    color: #fcf7f7;
+}
+
+/* Diet Plan Table */
+.diet-plan table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.diet-plan table, th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.diet-plan th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.diet-plan tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.diet-plan tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Tips Section */
+.tips {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tips h2 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.tips ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.tips li {
+    margin-bottom: 10px;
+}
+        /* Back Button */
+        .back-btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: white;
+            background-color: #28a745; /* Green color */
+            border: none;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #218838;
+        }
