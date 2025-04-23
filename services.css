@@ -1,0 +1,121 @@
+/* Reset and base styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: black;
+    color: white;
+    background-image: url("https://i.pinimg.com/originals/a7/4f/12/a74f12f8c93811af2b48dec0a9e95df1.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+header nav {
+    width: 37.5%; /* Adjust the width to center and reduce navbar space */
+}
+
+header nav ul {
+    display: flex;
+    
+    list-style: none;
+}
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    padding: 5px 10px;
+}
+
+header nav ul li a:hover {
+    color: #f39c12;
+}
+
+/* Services Section */
+.services {
+    padding: 50px 20px;
+}
+
+.services h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #f39c12;
+}
+
+.box-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.box {
+    background-color: #222;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 14px 12px rgba(16, 128, 40, 0.2);
+    transition: transform 0.3s;
+}
+
+.box img {
+    width: 100%;
+    height: auto;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    box-shadow: 10 14px 16px rgba(28, 186, 63, 0.2);;
+}
+
+.box .content {
+    padding: 20px;
+}
+
+.box h3 {
+    font-size: 1.5em;
+    color: #0eae21;
+    margin-bottom: 15px;
+}
+
+.box .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #21a313;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.box .btn:hover {
+    background-color: #0d190c;
+}
