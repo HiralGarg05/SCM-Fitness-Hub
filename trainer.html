@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Trainers</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      background-image: url("https://i.pinimg.com/originals/a7/4f/12/a74f12f8c93811af2b48dec0a9e95df1.jpg");
+    background-size: cover;
+    background-position: center;
+    }
+    header {
+      background-color: #222;
+      padding: 20px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      color: #fff;
+    }
+    .container {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    .trainer-card {
+      background-color: #333;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      width: 300px;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+      text-align: center;
+    }
+    .trainer-card img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    .trainer-card h2 {
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .trainer-card p {
+      margin: 5px 0;
+      color: #aaa;
+    }
+    .trainer-card button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #555;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .trainer-card button:hover {
+      background-color: #777;
+    }
+    .actions {
+      margin: 20px;
+    }
+    .actions button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      background-color: #555;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .actions button:hover {
+      background-color: #777;
+    }
+
+    /* Lightbox styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox-content {
+      background: #222;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      color: #fff;
+    }
+    .lightbox-content button {
+      margin: 10px;
+      padding: 15px 20px;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #555;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    }
+    .lightbox-content button:hover {
+      transform: scale(1.05);
+      background-color: #777;
+    }
+    .lightbox-content button img {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+    }
+    .close-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #555;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .close-btn:hover {
+      background-color: #777;
+    }
+    .actions button#back-page-btn {
+   background-color: #555;
+   color: #fff;
+   padding: 15px 30px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.actions button#back-page-btn:hover {
+  background-color:#777;
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Choose Your Fitness Trainer</h1>
+  </header>
+
+  <div class="container">
+    <!-- Trainer for Girls -->
+    <div class="trainer-card">
+      <img src="https://th.bing.com/th/id/OIP.IWI5cP41grznrMyr67ErpQHaHd?rs=1&pid=ImgDetMain" alt="Lisa Smith">
+      <h2>Trainer: Lisa Smith</h2>
+      <p><strong>Specialty:</strong> Yoga & Pilates</p>
+      <p><strong>Experience:</strong> 5 years</p>
+      <button onclick="chooseTrainer('Lisa Smith')">Choose Lisa</button>
+    </div>
+
+    <!-- Trainer for Boys -->
+    <div class="trainer-card">
+      <img src="https://th.bing.com/th/id/OIP.JwGtbgwnCZ4VUFdt7rCsXwAAAA?w=150&h=150&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt=" alt="John Deo">
+      <h2>Trainer: John Doe</h2>
+      <p><strong>Specialty:</strong> Strength & Cardio</p>
+      <p><strong>Experience:</strong> 7 years</p>
+      <button onclick="chooseTrainer('John Doe')">Choose John</button>
+    </div>
+  </div>
+
+  <div class="actions">
+    <p id="selected-trainer" style="font-size: 1.2rem; margin-bottom: 20px;">No trainer selected yet.</p>
+    <a href="payment2.html">
+    <button id="next-page-btn" disabled onclick="showLightbox()">Next Page</button>
+    </a>
+    <a href="pricing.html">
+      <button id="back-page-btn" style="background-color: grey;">Back</button>
+    </a>
+  </div>
+
+  <!-- Lightbox -->
+  
+
+  <script>
+    let selectedTrainer = "";
+
+    function chooseTrainer(name) {
+      selectedTrainer = name;
+      document.getElementById("selected-trainer").textContent = `You have selected: ${name}`;
+      document.getElementById("next-page-btn").disabled = false;
+    }
+
+    function showLightbox() {
+      if (!selectedTrainer) {
+        alert("Please select a trainer first!");
+        return;
+      }
+      document.getElementById('lightbox').classList.add('active');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    function processPayment(method) {
+      alert(`Payment processed via ${method}. Redirecting...`);
+      window.location.href = "nextpage.html"; // Replace "nextpage.html" with your actual next page URL.
+    }
+  </script>
+</body>
+</html>
