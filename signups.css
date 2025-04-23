@@ -1,0 +1,131 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: white;
+    background-image: url('https://th.bing.com/th/id/OIP.wQgwQIAT6Pfb0uwr8gkksAHaD5?rs=1&pid=ImgDetMain');
+    background-size: 100%;
+    background-position: center 30px ;
+    background-repeat: no-repeat;
+    
+
+}
+
+/* Wrapper for center alignment */
+.signup-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Container Styling */
+.signup-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: transparent;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(234, 228, 228, 0.1);
+    text-align: center;
+}
+
+.signup-container h2 {
+    font-size: 1.8rem;
+    color: #f9f3f3;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* Form Input Styling */
+.signup-container label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    color: #f5efef;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.signup-container input[type="text"],
+.signup-container input[type="password"],
+.signup-container input[type="number"],
+.signup-container select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #0d0d0d;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.signup-container input:focus,
+.signup-container select:focus {
+    border-color: #29a3f1;
+    outline: none;
+}
+
+/* Button Styling */
+.signup-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #29a3f1;
+    color: rgb(23, 20, 20);
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.signup-container button:hover {
+    background-color: #007bbd;
+}
+        /* Alert box styles */
+        .alert-box {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #333;
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1000;
+        }
+
+        .alert-box p {
+            margin: 0 0 1rem;
+            font-size: 1.1rem;
+        }
+
+        .alert-box button {
+            background-color: #29a3f1;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .alert-box button:hover {
+            background-color: #007bbd;
+        }
+
