@@ -1,0 +1,96 @@
+/* Wrapper for center alignment */
+body{
+    background-image: url('https://wallpapercave.com/wp/wp3132312.jpg');
+    background-size: 100%;
+    background-position: center 30px ;
+    background-repeat: no-repeat;
+}
+.forgot-password-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Container Styling */
+.forgot-password-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: transparent;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.forgot-password-container h2 {
+    font-size: 1.8rem;
+    color: #fcf7f7;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.forgot-password-container p {
+    color: #fdfafa;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+}
+
+/* Form Input Styling */
+.forgot-password-container label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    color: #fdf8f8;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.forgot-password-container input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.forgot-password-container input:focus {
+    border-color: #29a3f1;
+    outline: none;
+}
+
+/* Button Styling */
+.forgot-password-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: #29a3f1;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.forgot-password-container button:hover {
+    background-color: #007bbd;
+}
+
+/* Back to Login Link */
+.back-to-login {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.back-to-login a {
+    color: #29a3f1;
+    text-decoration: none;
+}
+
+.back-to-login a:hover {
+    text-decoration: underline;
+}
