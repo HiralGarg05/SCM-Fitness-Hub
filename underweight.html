@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Underweight Full Day Diet Plan</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      background-image: url('https://th.bing.com/th?id=OIP.aoUpYxRYms_uaW0B_Z2idwHaEt&w=313&h=199&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center; 
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #fdfdfe;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .button {
+      padding: 15px 25px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 200px;
+      text-align: center;
+    }
+
+    .button:hover {
+      background-color: #6b9277;
+    }
+   
+
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 600px;
+    }
+
+    .lightbox h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .close-button {
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .close-button:hover {
+      background-color: #218838;
+    }
+
+    /* Table Styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #28a745;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f4f4f9;
+    }
+
+    tr:hover {
+      background-color: #e8f5e9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Full Day Diet Plan for Underweight</h1>
+
+    <div class="button-container">
+      <button class="button" onclick="showLightbox()">View Full Day Diet Plan</button>
+      
+
+    </div>
+  </div>
+
+  <!-- Lightbox for Underweight Full Day Diet Plan -->
+  <div id="underweight-lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <h2>Full Day Diet Plan for Underweight</h2>
+      <table>
+        <tr><th>Meal</th><th>Diet Plan</th></tr>
+        <tr><td>Morning</td><td>Oatmeal with milk, nuts, and banana; a boiled egg</td></tr>
+        <tr><td>Mid-Morning</td><td>Fruit smoothie with protein powder and almonds</td></tr>
+        <tr><td>Lunch</td><td>Grilled chicken, brown rice, and steamed vegetables</td></tr>
+        <tr><td>Afternoon Snack</td><td>Greek yogurt with honey and mixed berries</td></tr>
+        <tr><td>Dinner</td><td>Salmon, quinoa, and mixed salad with avocado</td></tr>
+        <tr><td>Evening Snack</td><td>Whole-grain toast with peanut butter</td></tr>
+        <tr><td>Night</td><td>Chia pudding with almond milk and a handful of walnuts</td></tr>
+      </table>
+      <a href="weight.html">
+      <button class="close-button" onclick="closeLightbox()">Close</button>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Function to show the lightbox
+    function showLightbox() {
+      document.getElementById('underweight-lightbox').style.display = 'flex';
+    }
+
+    // Function to close the lightbox
+    function closeLightbox() {
+      document.getElementById('underweight-lightbox').style.display = 'none';
+    }
+    
+  </script>
+
+</body>
+</html>
