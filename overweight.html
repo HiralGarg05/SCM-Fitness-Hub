@@ -1,54 +1,172 @@
-/* team */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overweight Full Day Diet Plan</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      background-image: url('https://th.bing.com/th?id=OIP.aoUpYxRYms_uaW0B_Z2idwHaEt&w=313&h=199&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center; 
+    }
 
-.team .box-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(3rem 1fr));
-    gap: 0.1rem;
-}
+    .container {
+      text-align: center;
+    }
 
-.team .box-container .box{
-    position: relative;
-    overflow: hidden;
-    text-align: center; 
-}
+    h1 {
+      margin-bottom: 20px;
+      color: #fffcfc;
+    }
 
-.team .box-container .box .image{
-    height: 10rem;
-    width: 100%;
-    overflow: hidden;
-}
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
 
-.team .box-container .box .content{
-    padding: 2rem;
-    padding-top: 0;
-}
+    .button {
+      padding: 15px 25px;
+      background-color: #35a458;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 200px;
+      text-align: center;
+    }
 
-.team .box-container .box .content h3{
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
+    .button:hover {
+      background-color:#73987f;
+    }
 
-.team .box-container .box .content p{
-    font-size: 1.7rem;
-    margin-bottom: 1.5rem;
-}
+   
 
-.team .box-container .box .content .share i{
-    height: 4.5rem;
-    width: 4.5rem;
-    line-height: 4.5rem;
-    border: .1rem solid var(--primary);
-    color: var(--primary);
-    font-size: 2rem;
-    border-radius: 5rem;
-    box-shadow: var(--box-shadow);
-    margin-left: .5rem;
-    cursor: pointer;
-}
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
 
-.team .box-container .box .content .share i:hover{
-    color: var(--white);
-    background: var(--primary);
-}
+    .lightbox-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 600px;
+    }
 
-/* end */
+    .lightbox h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .close-button {
+      padding: 10px 20px;
+      background-color: #35a458;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+
+    }
+
+    .close-button:hover {
+      background-color:#35a458;
+    }
+
+    /* Table Styling */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #4ec977;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f4f4f9;
+    }
+
+    tr:hover {
+      background-color: #c9ecc8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Full Day Diet Plan for Overweight</h1>
+
+    <div class="button-container">
+      <button class="button" onclick="showLightbox()">View Full Day Diet Plan</button>
+     
+    </div>
+  </div>
+
+  <!-- Lightbox for Overweight Full Day Diet Plan -->
+  <div id="overweight-lightbox" class="lightbox">
+    <div class="lightbox-content">
+      <h2>Full Day Diet Plan for Overweight</h2>
+      <table>
+        <tr><th>Meal</th><th>Diet Plan</th></tr>
+        <tr><td>Morning</td><td>Green tea and a bowl of oatmeal with fresh berries</td></tr>
+        <tr><td>Mid-Morning</td><td>An apple or orange with a handful of almonds</td></tr>
+        <tr><td>Lunch</td><td>Grilled chicken or fish with quinoa and a large mixed salad</td></tr>
+        <tr><td>Afternoon Snack</td><td>Low-fat yogurt with cucumber sticks or celery</td></tr>
+        <tr><td>Dinner</td><td>Baked salmon, steamed broccoli, and a small sweet potato</td></tr>
+        <tr><td>Evening Snack</td><td>A cup of herbal tea with a slice of whole-grain toast</td></tr>
+        <tr><td>Night</td><td>A glass of warm skimmed milk or almond milk</td></tr>
+      </table>
+      <a href="weight.html">
+      <button class="close-button" onclick="closeLightbox()">Close</button>
+    </a></div>
+  </div>
+
+  <script>
+    // Function to show the lightbox
+    function showLightbox() {
+      document.getElementById('overweight-lightbox').style.display = 'flex';
+    }
+
+    // Function to close the lightbox
+    function closeLightbox() {
+      document.getElementById('overweight-lightbox').style.display = 'none';
+    }
+
+    // Function to go back to the previous page
+   
+  </script>
+
+</body>
+</html>
+
