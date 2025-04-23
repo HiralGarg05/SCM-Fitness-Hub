@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fitness Supplements</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #150606;
+      color: #000;
+    }
+
+    header {
+      text-align: center;
+      background: #12811b;
+      color: white;
+      padding: 20px 10px;
+    }
+
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .product {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 200px;
+      text-align: center;
+      transition: transform 0.3s, border 0.3s;
+    }
+
+    .product:hover {
+      border-color: #28a745;
+      transform: scale(1.05);
+    }
+
+    .product img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+      transition: transform 0.3s, border 0.3s;
+    }
+
+    .product img:hover {
+      transform: scale(1.05);
+      border: 2px solid #28a745;
+    }
+
+    .cart {
+      margin-top: 20px;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+      transition: transform 0.3s, border 0.3s;
+    }
+
+    .cart:hover {
+      border-color: #28a745;
+      transform: scale(1.02);
+    }
+
+    .cart h3 {
+      text-align: center;
+      margin: 0 0 10px;
+    }
+
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+    }
+
+    .payment-methods {
+      display: none;
+      padding: 10px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: 20px auto;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .payment-methods h3 {
+      margin-bottom: 15px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .payment-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px;
+      background: #0f801b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-bottom: 10px;
+      width: 120px;
+    }
+
+    .payment-button img {
+      height: 20px;
+      width: 20px;
+    }
+
+    .payment-button:hover {
+      background: #28a745;
+    }
+
+    #next-button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    .cart-item {
+      background: #f8f9fa;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cart-item:hover {
+      background: #e9ecef;
+    }
+
+    .quantity-buttons {
+      display: flex;
+      gap: 5px;
+    }
+
+    .quantity-buttons button {
+      padding: 5px 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .quantity-buttons button:hover {
+      background: #218838;
+      
+    }
+     .back-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: #0f801b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    width: 120px;
+  }
+
+  .back-button:hover {
+    background: #28a745;
+  }
+
+
+    
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Fitness Supplements</h1>
+    <p>Boost your fitness journey with our premium supplements!</p>
+  </header>
+
+  <main>
+    <div class="product-list">
+      <script>
+        const products = [
+          { id: 1, name: "Protein Powder", price: 500, image: "https://th.bing.com/th/id/OIP.ad4c8Pf4-oa_c6Qfdc6K7AHaJQ?w=160&h=200&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+          { id: 2, name: "Creatine", price: 300, image: "https://th.bing.com/th?id=OIP.PiYREeEZkDE3k-ABD8yWiAHaJd&w=221&h=282&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" },
+          { id: 3, name: "BCAA", price: 250, image: "https://th.bing.com/th?id=OIP.GehSeoJ-qyg-_TPD_knN-gHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" },
+          { id: 4, name: "Whey Protein", price: 550, image: "https://i5.walmartimages.com/asr/124b89c9-9937-431c-9b2f-cd715855273d.011369ce5c8d125467806a677ed15ab1.jpeg?odnWidth=1000&odnHeight=1000&odnBg=ffffff" },
+          { id: 5, name: "Glutamine", price: 200, image: "https://th.bing.com/th/id/OIP.crJapoAf3XHgxQAWbeknUQHaHa?w=211&h=211&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+          { id: 6, name: "Pre-Workout", price: 400, image: "https://th.bing.com/th/id/OIP.95JPEwWhYxo6s3c-U-WhVAHaHa?rs=1&pid=ImgDetMain" },
+          { id: 7, name: "Casein Protein", price: 250, image: "https://th.bing.com/th/id/OIP.i1rzyV3xH0-OjX8qQ3_TUwHaHa?w=197&h=197&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+          { id: 8, name: "BCAAs Amino Acids", price: 280, image: "https://th.bing.com/th/id/OIP.k3GaIo938DeBp49sB9XfzAHaHa?rs=1&pid=ImgDetMain" },
+          { id: 9, name: "Testo Booster", price: 350, image: "https://th.bing.com/th/id/OIP.e7wqoWWUC3_sC2wKS-E93AHaHa?w=201&h=200&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+          { id: 10, name: "Omega-3", price: 220, image: "https://th.bing.com/th/id/OIP.8GVfCfy2Mx-WukTfmAXo3AHaHa?w=186&h=186&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+          { id: 11, name: "Post-Workout Recovery", price: 37, image: "https://th.bing.com/th/id/OIP.DA8OTgkD1R6BfajqLTk9XwHaKX?w=129&h=181&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+          { id: 12, name: "Mass Gainer", price: 650, image: "https://th.bing.com/th/id/OIP.-_QteXX24WTSqdL2fBkHaQHaK4?w=134&h=197&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+          { id: 13, name: "Fat Burner", price: 500, image: "https://th.bing.com/th/id/OIP.Dgvnh9n69CwB1q-3TEVCxAHaJJ?w=154&h=191&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+          { id: 14, name: "Electrolyte Powder", price: 300, image: "https://cdn.shopify.com/s/files/1/0262/3465/0710/products/p2_fab25ef1-6175-4b3f-8665-bd5d5b16255d.jpg?v=1569833691" },
+          { id: 15, name: "Pre-Workout Energy", price: 380, image: "https://th.bing.com/th/id/OIP.qYQgD0jYjwFtZj5OjVz9KAHaHa?w=194&h=194&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+          { id: 16, name: "Vitamin D3", price: 200, image: "https://th.bing.com/th/id/OIP.cnyfGNvQ4jX2BMPuOMqcVQAAAA?w=152&h=190&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+          { id: 17, name: "L-Carnitine", price: 280, image: "https://th.bing.com/th/id/OIP.WkzTphKFM4SuiH4v9EMEjAHaKe?w=139&h=197&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+          { id: 18, name: "Joint Support", price: 300, image: "https://th.bing.com/th/id/OIP.LtlMN3u1Qhdi1_eFmYhn0QHaHv?rs=1&pid=ImgDetMain" },
+          { id: 19, name: "Collagen Protein", price: 400, image: "https://th.bing.com/th/id/OIP.7DP8tOn7MZovLEVs-mAiWQHaHa?w=195&h=195&c=7&r=0&o=5&dpr=1.3&pid=1.7" },
+          { id: 20, name: "Energy Bars", price: 120, image: "https://th.bing.com/th?q=Energy+Powder+Cover+Page&w=120&h=120&c=1&rs=1&qlt=90&cb=1&dpr=1.3&pid=InlineBlock&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247" }
+        ];
+
+        products.forEach(product => {
+          document.write(`
+            <div class="product" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}">
+              <img src="${product.image}" alt="${product.name}" onclick="openLightbox('${product.image}')">
+              <h2>${product.name}</h2>
+              <p class="price">₹${product.price}</p>
+              <button class="add-to-cart" onclick="addToCart(${product.id})">Add to Cart</button>
+            </div>
+          `);
+        });
+      </script>
+    </div>
+
+    <section class="cart">
+      <h3>Your Cart</h3>
+      <div id="cart-items">
+        <p>Your cart is empty.</p>
+      </div>
+      <p id="total-price">Total: ₹0</p>
+      <a href="payment1.html">
+      <button id="next-button" onclick="showPaymentMethods()" disabled>Next</button>
+    </a></section>
+    <a href="girls.html">
+      <button class="back-button">Back</button>
+    </a>
+
+    
+  </main>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Product">
+  </div>
+
+  <script>
+    let cart = {};
+
+    function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      if (!product) return;
+
+      if (cart[productId]) {
+        cart[productId].quantity += 1;
+      } else {
+        cart[productId] = { ...product, quantity: 1 };
+      }
+
+      updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+      const cartItemsContainer = document.getElementById("cart-items");
+      cartItemsContainer.innerHTML = "";
+      let totalPrice = 0;
+
+      Object.values(cart).forEach(({ id, name, price, quantity }) => {
+        totalPrice += price * quantity;
+
+        const cartItem = document.createElement("div");
+        cartItem.classList.add("cart-item");
+        cartItem.innerHTML = `
+          <span>${name} - ₹${price.toFixed(2)} x ${quantity}</span>
+          <div class="quantity-buttons">
+            <button onclick="changeQuantity(${id}, 'decrease')">-</button>
+            <button onclick="changeQuantity(${id}, 'increase')">+</button>
+          </div>
+          <button onclick="removeFromCart(${id})">Remove</button>
+        `;
+        cartItemsContainer.appendChild(cartItem);
+      });
+
+      document.getElementById("total-price").innerText = `Total: ₹${totalPrice.toFixed(2)}`;
+
+      if (Object.keys(cart).length > 0) {
+        document.getElementById("next-button").disabled = false;
+      } else {
+        document.getElementById("next-button").disabled = true;
+        document.getElementById("payment-methods").style.display = "none";
+      }
+    }
+
+    function removeFromCart(productId) {
+      if (cart[productId]) {
+        delete cart[productId];
+        updateCartDisplay();
+      }
+    }
+
+    function changeQuantity(productId, action) {
+      if (cart[productId]) {
+        if (action === "increase") {
+          cart[productId].quantity += 1;
+        } else if (action === "decrease" && cart[productId].quantity > 1) {
+          cart[productId].quantity -= 1;
+        }
+        updateCartDisplay();
+      }
+    }
+
+    function showPaymentMethods() {
+      if (Object.keys(cart).length > 0) {
+        document.getElementById("payment-methods").style.display = "flex";
+      }
+    }
+
+    function makePayment(method) {
+      alert(`Payment made through ${method}`);
+      cart = {};
+      updateCartDisplay();
+      document.getElementById("payment-methods").style.display = "none";
+    }
+
+    function openLightbox(imageSrc) {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      lightboxImg.src = imageSrc;
+      lightbox.classList.add("active");
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById("lightbox");
+      lightbox.classList.remove("active");
+    }
+  </script>
+</body>
+</html>
