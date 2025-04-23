@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="forgot.css">
+</head>
+<body>
+    <div class="forgot-password-wrapper">
+        <div class="forgot-password-container">
+            <h2>Forgot Password</h2>
+            <p>Enter your registered email or phone number to reset your password.</p>
+            
+            <form action="reset_password.php" method="post">
+                <!-- Email/Phone Field -->
+                <label for="contact">Email or Phone Number</label>
+                <input type="text" id="contact" name="contact" placeholder="Enter email or phone (required)" required>
+
+                <!-- Submit Button -->
+                <button type="submit">Send Reset Instructions</button>
+            </form>
+            
+
+            <!-- Back to Login Link -->
+            <p class="back-to-login"><a href="loginpages_html.html">Back to Log In</a></p>
+        </div>
+    </div>
+</body>
+</html>
