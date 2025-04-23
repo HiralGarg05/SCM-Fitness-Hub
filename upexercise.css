@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    background-image: url('https://th.bing.com/th?id=OIP.lwdlDVgk14hQxLbSLm8RRgAAAA&w=190&h=286&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2');
+      background-size: cover;
+      background-position: center 30px ;
+      background-repeat: no-repeat;
+}
+
+.exercise-section {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.exercise-item {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.exercise-item img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.description {
+    width: 50%;
+    padding: 20px;
+}
+
+.description h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.description p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Alignments for alternating layout */
+.exercise-item.left {
+    flex-direction: row;
+}
+
+.exercise-item.right {
+    flex-direction: row-reverse;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .exercise-item {
+        flex-direction: column;
+    }
+    .description, .exercise-item img {
+        width: 100%;
+    }
+}
+.back-button {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    background-color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 20px;
+}
+
+.back-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+.back-button:focus, .back-button:hover {
+    outline: none;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.8); /* Glowing effect */
+}
