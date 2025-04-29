@@ -31,5 +31,58 @@
             <button onclick="window.location" href="signups.html" class="register-btn">Register</button>
         </div>
     </div>
+    <script>
+        const contactInput = document.getElementById('contact');
+        const passwordInput = document.getElementById('password');
+        const contactError = document.getElementById('contactError');
+        const passwordError = document.getElementById('passwordError');
+        const form = document.getElementById('loginForm');
+
+        // Email/Phone validation
+        function validateContact() {
+            const contactValue = contactInput.value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phoneRegex = /^[0-9]{10}$/;
+
+            if (!emailRegex.test(contactValue) && !phoneRegex.test(contactValue)) {
+                contactError.textContent = 'Enter a valid email or 10-digit phone number.';
+                contactInput.classList.add('error');
+                return false;
+            } else {
+                contactError.textContent = '';
+                contactInput.classList.remove('error');
+                return true;
+            }
+        }
+
+        // Password validation
+        function validatePassword() {
+            const passwordValue = passwordInput.value.trim();
+            if (passwordValue.length < 8) {
+ passwordError.textContent = 'Password must be at least 8 characters long.';
+                passwordInput.classList.add('error');
+                return false;
+            } else {
+                passwordError.textContent = '';
+                passwordInput.classList.remove('error');
+                return true;
+            }
+        }
+
+        // Add real-time validation
+        contactInput.addEventListener('input', validateContact);
+        passwordInput.addEventListener('input', validatePassword);
+
+        // Form submission validation
+        form.addEventListener('submit', (e) => {
+            const isContactValid = validateContact();
+            const isPasswordValid = validatePassword();
+
+            if (!isContactValid || !isPasswordValid) {
+                e.preventDefault(); // Prevent form submission if validations fail
+            }
+        });
+    </script>
+    
 </body>
 </html>
